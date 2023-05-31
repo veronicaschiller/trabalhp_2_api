@@ -16,8 +16,9 @@ export const Imovel = sequelize.define('imovel', {
     type: DataTypes.STRING(100),
     allowNull: false
   },
-  status: {
+  ocupado: {
     type: DataTypes.BOOLEAN,
+    defaultValue: 0
   }
 },{
     tablename: 'imoveis',
