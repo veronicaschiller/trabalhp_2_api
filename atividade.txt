@@ -1,0 +1,41 @@
+Trabalho #2 – Noite: APIs com tabelas relacionadas e transações
+
+- Uma imobiliária necessita de uma API para controlar seus proprietários de imóveis,
+inquilinos, imóveis e aluguéis. Para isso, criar as seguintes Models:
+
+- Proprietario: para manipular dados dos proprietários de imóveis que disponibilizam seus imóveis
+para alugar na imobiliária.
+
+- Inquilino: para manipular dados dos inquilinos que alugam imóveis na imobiliária.
+
+- Imovel: para manipular os imóveis disponíveis para alugar. Cada imóvel deve estar vinculado a um
+proprietário e conter o campo (atributo) status que deve iniciar com o valor 0 (disponível).
+
+- Aluguel: para manipular os contratos de aluguéis de um inquilino com um imóvel. A model deve
+conter o campo (atributo) data_final (do contrato) que deve iniciar vazio.
+
+Obs.: Ajustar o nome das tabelas => imoveis (padrão: imovels) e alugueis (padrão: aluguel)
+
+1. Executar o projeto para a criação das tabelas do sistema. Inserir 3 ou 4 registros nas tabelas de proprietários e
+inquilinos (via linha de comando do MySQL ou software de gerenciamento de banco de dados – MySQL ou
+SQLite).
+
+2. Criar as rotas e as funções para incluir e listar os imóveis (na listagem, exibir dados do proprietário). Testar as
+rotas pelo INSOMNIA.
+
+3. Criar as rotas e as funções para incluir e listar os contratos de aluguéis (na listagem, exibir dados do inquilino e
+do imóvel). [TRANSAÇÃO]: Na inclusão, alterar o status do imóvel de 0 (disponível) para 1 (ocupado). Testar as
+rotas pelo INSOMNIA.
+
+4. Criar a rota e a função para finalizar um contrato de aluguel. [TRANSAÇÃO]: Na finalização, preencher a
+data_final do contrato do imóvel com a data atual e alterar novamente o status do imóvel, retornando para 0
+(disponível). Testar a rota pelo INSOMNIA.
+
+5. Na inclusão de um contrato de aluguel impedir que um imóvel "ocupado" (status = 1) seja alugado (acrescentar
+uma condição e retornar mensagem), bem como, na finalização do contrato, impedir a finalização de um contrato
+já finalizado (acrescentar uma condição e retornar mensagem).
+
+Conceitos:
+- Conceito C: Itens 1 e 2 concluídos corretamente
+- Conceito B: Itens 1, 2 e 3 concluídos corretamente
+- Conceito A: Itens 1, 2, 3, 4 e 5 concluídos corretamente
