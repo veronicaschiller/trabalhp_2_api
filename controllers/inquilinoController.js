@@ -1,10 +1,11 @@
-import { Imovel } from "../models/Imovel";
+import { Imovel } from "../models/Imovel.js";
 import { Inquilino } from "../models/Inquilino.js";
+import { Proprietario } from "../models/Proprietario.js";
 
 export const inquilinoIndex = async (req, res) =>{
     try {
         const inquilino =  await Inquilino.findAll({
-            include:Imovel
+            include:[Imovel]
         })
         res.status(200).json(inquilino)
     } catch (error) {
